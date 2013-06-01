@@ -31,6 +31,11 @@ public class Test {
         
         JSONHelper jsonHelper = new JSONHelper();
         jsonHelper.storeToJSON(gb);
+        
+        GradeBook gradeBookImported = jsonHelper.getFromJSON();
+        System.out.println(gradeBookImported.toString());
+        
+        
     
     }
 }

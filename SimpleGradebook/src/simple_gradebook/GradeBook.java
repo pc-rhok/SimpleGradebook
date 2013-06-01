@@ -19,7 +19,17 @@ public class GradeBook {
     }
     
     public String toString(){
-        String output = "";
+    	 String output = ""; 
+    	
+    	for(int i = 0; i < courses.size(); i++)
+    	{
+    		ArrayList<Student> students = courses.get(i).getStudents();
+    		for(int j = 0; j <students.size(); j++)
+    		{
+    			output = output + students.get(j).getName();
+    		}
+    	}
+       
         
         
         
