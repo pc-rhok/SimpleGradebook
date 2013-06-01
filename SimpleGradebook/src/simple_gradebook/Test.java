@@ -25,7 +25,9 @@ public class Test {
             fun.addStudent(students.get(i));
         }
         
-        Assignment project = new Assignment();
+        Assignment project = new Assignment("do work", 3, ++fun.assignID);
+        
+        fun.addAssignment(project);
     
     }
 }

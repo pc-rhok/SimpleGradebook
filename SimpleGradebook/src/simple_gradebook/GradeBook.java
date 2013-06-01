@@ -17,4 +17,12 @@ public class GradeBook {
         course.setCourseID(++courseCounter);
         this.courses.add(course);
     }
+    
+    public String toString(){
+        String output = "";
+        
+        
+        
+        return output;
+    }
 }

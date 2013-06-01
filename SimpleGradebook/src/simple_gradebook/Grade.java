@@ -4,9 +4,9 @@ public class Grade {
     Student student;
     int UID;
     float value;
-    int weight;
+    float weight;
     
-    public Grade(Student student, float value, int weight){
+    public Grade(Student student, float value, float weight){
         this.student = student;
         this.value = value;
         this.weight = weight;
