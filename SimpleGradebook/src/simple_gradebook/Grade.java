@@ -1,11 +1,14 @@
 package simple_gradebook;
 
 public class Grade {
-    String studentName;
+    Student student;
+    int UID;
     float value;
+    int weight;
     
-    public Grade(String studentName, float value){
-        this.studentName = studentName;
+    public Grade(Student student, float value, int weight){
+        this.student = student;
         this.value = value;
+        this.weight = weight;
     }
 }

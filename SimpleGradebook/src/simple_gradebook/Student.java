@@ -8,7 +8,6 @@ public class Student {
     public Student(String name, String IDString){
         this.name = name;
         this.IDString = IDString;
-        
     }
     
     public String getName(){
@@ -33,5 +32,13 @@ public class Student {
     
     public void setUID(int uid){
         this.uid = uid;
+    }
+    
+    public boolean equals(Student student){
+        if(this.uid == student.uid){
+            return true;
+        }
+        return false;
+        
     }
 }
