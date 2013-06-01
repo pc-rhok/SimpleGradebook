@@ -24,7 +24,7 @@ public class JSONHelper {
 		
 	}
 	
-	public GradeBook getFromJSON(String str){
+	public GradeBook getFromJSON(){
 		
 		Gson gson = new Gson();
 		
