@@ -6,7 +6,7 @@ public class Course {
     String name;
     String teacher;
     private int courseID;
-    ArrayList<Grade> grades;
+    ArrayList<Assignment> assignments;
     ArrayList<Attend> attendance;
     ArrayList<Student> students;
     float[] weights;
@@ -24,7 +24,7 @@ public class Course {
                this.weights[i] = weights[i];
            }
            
-           this.grades = new ArrayList<Grade>();
+           this.assignments = new ArrayList<Assignment>();
            this.attendance = new ArrayList<Attend>();
            this.students = new ArrayList<Student>();
     }
@@ -36,8 +36,10 @@ public class Course {
     
     public void removeStudent(Student student){
         
-        for(int i = 0; i < grades.size(); i++){
-            if(grades.get(i).student.equals(student)){
+        ///TO DOUBLE FOR LOOP TO REMOVE GRADES
+        
+        for(int i = 0; i < assignments.size(); i++){
+            if(asignment.get(i).student.equals(student)){
                 grades.remove(i);
             }
         }
