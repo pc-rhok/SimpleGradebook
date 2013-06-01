@@ -25,10 +25,16 @@ public class Test {
             fun.addStudent(students.get(i));
         }
         
+<<<<<<< HEAD
         Assignment project = new Assignment();
         
         JSONHelper jsonHelper = new JSONHelper();
         jsonHelper.storeToJSON(gb);
+=======
+        Assignment project = new Assignment("do work", 3, ++fun.assignID);
+        
+        fun.addAssignment(project);
+>>>>>>> 2a5f213fa186f191287aff11499e5d519c2de0e5
     
     }
 }
