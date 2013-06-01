@@ -26,6 +26,9 @@ public class Test {
         }
         
         Assignment project = new Assignment();
+        
+        JSONHelper jsonHelper = new JSONHelper();
+        jsonHelper.storeToJSON(gb);
     
     }
 }
