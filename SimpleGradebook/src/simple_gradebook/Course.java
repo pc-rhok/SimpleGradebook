@@ -5,13 +5,15 @@ import java.util.ArrayList;
 public class Course {
     String name;
     String teacher;
-    private int courseID;
+    
     ArrayList<Assignment> assignments;
     ArrayList<Attend> attendance;
     ArrayList<Student> students;
     float[] weights;
     
+    private int courseID;
     static int studentID = 0;
+    static int assignID = 0;
     
     public Course(String name, String teacher, float[] weights){
            this.name = name;
@@ -36,14 +38,22 @@ public class Course {
     
     public void removeStudent(Student student){
         
-        ///TO DOUBLE FOR LOOP TO REMOVE GRADES
-        
         for(int i = 0; i < assignments.size(); i++){
-            if(asignment.get(i).student.equals(student)){
-                grades.remove(i);
+            for(int j = 0; j <assignments.get(i).grades.size(); j++){
+                if(assignments.get(i).grades.get(j).student.equals(student)){
+                    assignments.get(i).grades.remove(j);
+                }
             }
         }
+        
         this.students.remove(student);
+    }
+    
+    public void addAssignment(Assignment assign){
+    }
+    
+    public void inputGrade(Student student, Assignment project){
+        
     }
     
     public boolean equals(Course course){
