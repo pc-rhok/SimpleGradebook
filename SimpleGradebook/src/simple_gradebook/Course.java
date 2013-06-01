@@ -5,4 +5,9 @@ public class Course {
     Grade[] grades;
     Attend[] attendance;
     assignWeight[] weights;
+    
+    public Course(String name, float[] weights){
+           
+        
+    }
 }
