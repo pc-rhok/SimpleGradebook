@@ -10,6 +10,9 @@ public class GradeBook {
     
     public GradeBook(){
         this.courses = new ArrayList<Course>();
-        
+    }
+    
+    public void addCourse(Course course){
+        this.courses.add(course);
     }
 }

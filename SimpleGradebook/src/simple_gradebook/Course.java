@@ -30,4 +30,8 @@ public class Course {
         this.students.add(student);
         student.setUID(students.size());
     }
+    
+    public void removeStudent(Student student){
+        this.students.remove(student);
+    }
 }
