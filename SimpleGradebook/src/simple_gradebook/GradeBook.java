@@ -13,6 +13,10 @@ public class GradeBook {
         this.courses = new ArrayList<Course>();
     }
     
+    /**
+     * It does a thing!
+     * @param course This parameter is awesome!
+     */
     public void addCourse(Course course){
         course.setCourseID(++courseCounter);
         this.courses.add(course);
