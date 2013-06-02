@@ -1,12 +1,12 @@
 String[] assignmentNames = {
-  "a1", "a2", "a3", "a4", "a5", "a6", "a7","8","9","10","11","12","13","14","","","",""
+  "a1", "a2", "a3", "a4", "a5", "a6", "a7"
 };
 
 Group assignmentList() {
   // Set up the list of classes
   Group g = cp5.addGroup("assignmentView");
   // The back button
-  Button back = cp5.addButton("backToClassViewFromAssignment")
+  Button back = cp5.addButton("backToClassFromAssignment")
     .setValue(0)
       .setSize(100, 50)
         .setPosition(0, 0)
@@ -15,7 +15,7 @@ Group assignmentList() {
   // The list of assignments
   ListBox classes = cp5.addListBox("assignmentList")
     .setPosition(0, 100)
-      .setSize(width, height-110)
+      .setSize(width, height-150)
         .setItemHeight(30)
           .setBarHeight(30)
             .setColorBackground(color(255, 128))

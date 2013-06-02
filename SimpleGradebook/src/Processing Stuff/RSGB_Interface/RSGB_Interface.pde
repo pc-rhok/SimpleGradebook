@@ -48,12 +48,18 @@ void controlEvent(ControlEvent theEvent) {
     } else {
       item.setColorBackground(color(#ff0000));
     }
-  } else if (name.equals("backToClassView")) {
+  } else if (name.equals("backToClass")) {
     switchView(1);
   } else if (name.equals("assignments")) {
     switchView(2);
   } else if (name.equals("backToClassList")) {
     switchView(0);
+  } else if (name.equals("attendance")) {
+    switchView(3);
+  } else if (name.equals("backToClassFromAssignment")) {
+    switchView(1);
+  } else if (name.equals("backToClassFromAttendance")) {
+    switchView(1);
   }
 }
 

@@ -11,9 +11,16 @@ Group attendanceList() {
     attendance.put(name, true);
   }
   Group g = cp5.addGroup("attendanceView");
+  // The back button
+  Button back = cp5.addButton("backToClassFromAttendance")
+    .setValue(0)
+      .setSize(100, 50)
+        .setPosition(0, 0)
+          .setLabel("Back")
+            .setGroup(g);
   ListBox classes = cp5.addListBox("attendanceList")
-    .setPosition(0, 30)
-      .setSize(width, height-50)
+    .setPosition(0, 100)
+      .setSize(width, height-150)
         .setItemHeight(30)
           .setBarHeight(30)
             .setColorBackground(color(128))
@@ -32,4 +39,3 @@ Group attendanceList() {
   }
   return g;
 }
-
