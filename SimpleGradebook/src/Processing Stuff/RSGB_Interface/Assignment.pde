@@ -1,8 +1,13 @@
 import java.util.HashMap;
+HashMap<String, Integer> grades = new HashMap<String, Integer>();
+int selectedGrade = 0;
 
 Group assignment() {
   // Set up the list of students
   Group g = cp5.addGroup("assignment");
+  for (String name : studentNames) {
+    grades.put(name, -1);
+  }
   // The back button
   Button back = cp5.addButton("backToAssignmentListFromAssignment")
     .setValue(0)
@@ -15,7 +20,7 @@ Group assignment() {
     .setPosition(20, 100)
       .setSize(200, 40)
         .setFocus(true)
-          .setColor(color(255, 0, 0))
+          .setColor(color(255))
             .setLabel("Assignment Name")
               .setFocus(false)
                 .setGroup(g);
@@ -25,7 +30,7 @@ Group assignment() {
     .setPosition(20, 220)
       .setSize(200, 40)
         .setFocus(true)
-          .setColor(color(255, 0, 0))
+          .setColor(color(255))
             .setLabel("Points Available")
               .setFocus(false)
                 .setGroup(g);
@@ -63,21 +68,47 @@ Group assignment() {
   students.captionLabel().setColor(color(0));
   students.captionLabel().style().marginTop = 3;
   students.valueLabel().style().marginTop = 3;
-  for (int i = 0; i < studentNames.length; i++) {
-    ListBoxItem lbi = students.addItem(studentNames[i], i);
-    lbi.setColorBackground(color(50));
-  }
+  updateGrades();
   students.setGroup(g);
 
   //Grade Input Field
   Textfield inputPoints = cp5.addTextfield("gradeInput")
     .setPosition(.9*width/2, height-70).setSize(200, 40)
       .setFocus(true)
-        .setColor(color(255, 0, 0))
+        .setColor(color(255))
           .setLabel("Points")
             .setFocus(false)
               .setGroup(g);
   inputPoints.getCaptionLabel().setColor(color(0));
+  //Average Grade
+  Textarea average = cp5.addTextarea("txt")
+    .setPosition(20, 350)
+      .setSize(200, 50)
+        .setLineHeight(14)
+          .setColor(color(50))
+            .setColorBackground(color(0, 100))
+              .setColorForeground(color(255, 100))
+                .setText("AVERAGE GRADE: 78")
+                  .setGroup(g);
+  ;
+
   return g;
+}
+
+void updateGrades() {
+  println("SELECTED: "+selectedGrade);
+  ListBox students = (ListBox)cp5.get("gradeEntryList");
+  for (int i = 0; i < studentNames.length; i++) {
+    ListBoxItem lbi;
+    if (grades.get(studentNames[i]) >= 0)
+      lbi = students.addItem(studentNames[i]+"     ("+grades.get(studentNames[i])+")", i);
+    else
+      lbi = students.addItem(studentNames[i], i);
+    if (i == selectedGrade) {
+      lbi.setColorBackground(color(0, 100, 0));
+    } else {
+      lbi.setColorBackground(color(50));
+    }
+  }
 }
 
