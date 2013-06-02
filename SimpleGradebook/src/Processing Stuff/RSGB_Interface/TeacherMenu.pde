@@ -1,6 +1,4 @@
-String[] classNames = {
-  "Math", "Science", "Literature", "History"
-};
+String[] classNames;
 
 Group teacherMenu() {
   // Set up the list of classes
@@ -20,10 +18,6 @@ Group teacherMenu() {
   classes.captionLabel().setColor(color(0));
   classes.captionLabel().style().marginTop = 3;
   classes.valueLabel().style().marginTop = 3;
-  for (int i = 0; i < classNames.length; i++) {
-    ListBoxItem lbi = classes.addItem(classNames[i], i);
-    lbi.setColorBackground(color(50));
-  }
   // Set up the button for adding classes
   Button addClass = cp5.addButton("addClass");
   addClass.setValue(0);
@@ -34,3 +28,15 @@ Group teacherMenu() {
   return g;
 }
 
+void loadClassNames() {
+  classNames = new String[gb.courses.size()];
+  for (int i = 0; i < gb.courses.size(); i++) {
+    classNames[i] = gb.courses.get(i).getName();
+  }
+  ListBox classes = (ListBox)cp5.get("classList");
+  classes.clear();
+  for (int i = 0; i < classNames.length; i++) {
+    ListBoxItem lbi = classes.addItem(classNames[i], i);
+    lbi.setColorBackground(color(50));
+  }
+}

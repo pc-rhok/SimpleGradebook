@@ -1,11 +1,15 @@
 import controlP5.*;
 
 ControlP5 cp5;
+GradeBook gb = new GradeBook();
 
 Group[] views;
 
 void setup() {
-  Student s = new Student("Bob", "blah", "blah");
+  gb.addCourse(new Course("fun", "mr.awesome", new float[] {
+    1, 1, 1, 1, 1, 1
+  }
+  ));
   size(640, 480);
   cp5 = new ControlP5(this);
   views = new Group[] {
@@ -19,7 +23,10 @@ void draw() {
   background(color(200));
 }
 
+int nStudents = 0;
 void switchView(int viewNum) {
+  nStudents = 0;
+  if (viewNum == 0) loadClassNames();
   for (int i = 0; i < views.length; i++) {
     if (i == viewNum)
       views[i].setVisible(true);
@@ -104,7 +111,7 @@ void controlEvent(ControlEvent theEvent) {
   } else if (name.equals("addClass")) {
     switchView(8);
   } else if (name.equals("saveClass")) {
-    //TODO: Save the class.
+    gb.addCourse(newCourse());
     switchView(0);
   } else if (name.equals("cancelClass")) {
     //TODO: Ditch the class.
@@ -115,6 +122,11 @@ void controlEvent(ControlEvent theEvent) {
   } else if (name.equals("listOfAssignments")) {
     //TODO: Pull up this specific assignment
     switchView(5);
+  } else if (name.equals("addStudent")) {
+    String studentName = ((Textfield)cp5.get("studentName")).getText();
+      ListBox list = (ListBox)cp5.get("masterStudentList");
+    list.addItem(studentName, nStudents);
+    nStudents++;
   }
 }
 

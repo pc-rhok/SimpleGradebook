@@ -100,3 +100,22 @@ Group classConfig() {
   return g;
 }
 
+Course newCourse() {
+  int hwWeight = int(((Textfield)cp5.get("hwWeight")).getText());
+  int classWeight = int(((Textfield)cp5.get("classWorkWeight")).getText());
+  int quizWeight = int(((Textfield)cp5.get("quizWeight")).getText());
+  int testWeight = int(((Textfield)cp5.get("testWeight")).getText());
+  int projectWeight = int(((Textfield)cp5.get("projectWeight")).getText());
+  int finalWeight = int(((Textfield)cp5.get("finalWeight")).getText());
+  float[] weights = new float[] {
+    hwWeight, classWeight, quizWeight, testWeight, projectWeight, finalWeight
+  };
+  String courseName = ((Textfield)cp5.get("className")).getText();
+  Course c = new Course(courseName, "", weights);
+  ListBox list = (ListBox)cp5.get("masterStudentList");
+  for (int i = 0; i < nStudents; i++) {
+    Student s = new Student(list.get(i).getText());
+  }
+  return c;
+}
+
