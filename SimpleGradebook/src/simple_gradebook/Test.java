@@ -6,9 +6,9 @@ public class Test {
     public static void main(String[] args){
         GradeBook gb = new GradeBook();
         
-        Student billy = new Student("Billy","Bob");
-        Student sally = new Student("Sally","Salamander");
-        Student sanjay = new Student("Sanjay","TheNireSpire");
+        Student billy = new Student("Billy","Bob","MOM@MOM.com");
+        Student sally = new Student("Sally","Salamander","DAD@DAD.com");
+        Student sanjay = new Student("Sanjay","TheNireSpire","UNCLE@UNCLECOM");
         
         ArrayList<Student> students = new ArrayList<Student>();
         students.add(billy);
@@ -31,15 +31,17 @@ public class Test {
         
         fun.inputGrade(sally, project, 99);
         
+        System.out.println(fun.printReportCard(sally));
+        
         JSONHelper jsonHelper = new JSONHelper();
         jsonHelper.storeToJSON(gb);
         
         GradeBook gradeBookImported = jsonHelper.getFromJSON();
         System.out.println(gradeBookImported.toString());
         
-        System.out.println(gradeBookImported.courses.get(1).printReportCard(sally));
+        System.out.println(gradeBookImported.courses.get(0).printReportCard(sally));
         
         
-    
+
     }
 }

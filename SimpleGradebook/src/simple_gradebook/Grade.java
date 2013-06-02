@@ -1,25 +1,15 @@
 package simple_gradebook;
 
 public class Grade {
-    private Student student;
     private int UID;
     private float value;
     private float weight;
     private Assignment assignment;
 
     public Grade(Student student, Assignment assignment, float value, float weight){
-        this.student = student;
         this.value = value;
         this.weight = weight;
         this.assignment = assignment;
-    }
-    
-    public Student getStudent() {
-        return student;
-    }
-
-    public void setStudent(Student student) {
-        this.student = student;
     }
 
     public int getUID() {

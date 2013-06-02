@@ -21,12 +21,7 @@ public class Course {
            this.name = name;
            this.teacher = teacher;
            
-           this.weights = new float[6];
-           
-           
-           for(int i = 0; i < weights.length; i ++){
-               this.weights[i] = weights[i];
-           }
+           this.weights = weights;
            
            this.assignments = new ArrayList<Assignment>();
            this.attendance = new ArrayList<Attend>();
@@ -41,14 +36,6 @@ public class Course {
     
     public void removeStudent(Student student){
         
-        for(int i = 0; i < assignments.size(); i++){
-            for(int j = 0; j <assignments.get(i).grades.size(); j++){
-                if(assignments.get(i).grades.get(j).getStudent().equals(student)){
-                    assignments.get(i).grades.remove(j);
-                }
-            }
-        }
-        
         this.students.remove(student);
     }
     
@@ -58,7 +45,7 @@ public class Course {
     
     public void inputGrade(Student student, Assignment project, float value){
         Grade toInput = new Grade(student, project, value, weights[project.getType()]);
-        project.grades.add(toInput);
+        student.getGrades().add(toInput);
         grades.add(toInput);
     }
     
@@ -73,13 +60,9 @@ public class Course {
     
     public ArrayList<Assignment> getStudentAssignments(Student student){
         ArrayList<Assignment> output = new ArrayList<Assignment>();
-        for(int i = 0; i < assignments.size(); i++){
-            for(int j = 0; j < assignments.get(i).grades.size(); j++){
-                if(assignments.get(i).grades.get(j).getStudent().equals(student)){
-                    output.add(assignments.get(i));
-                }
-            }  
-        }        
+        for(int i = 0; i < student.getGrades().size(); i++){
+            output.add(student.getGrades().get(i).getAssignment());
+        }       
         return output;
     }
     
@@ -92,14 +75,16 @@ public class Course {
         str.append(student.getNumAbsences() + "\n");
         
         ArrayList<Assignment> assigns = getStudentAssignments(student);
+        ArrayList<Grade> grds = student.getGrades();
         
         float gradeSum = 0;
         int numGrades = 0;
         
-        for(int i = 0; i < assigns.size(); i++){
+        for(int i = 0; i < grds.size(); i++){
             str.append(assigns.get(i).getName() + "-----------------");
-            str.append(assigns.get(i).getStudentGrade(student).getValue() + "\n");
-            gradeSum += assigns.get(i).getStudentGrade(student).getValue();
+            str.append(grds.get(i).getAssignment().getName() + "\n");
+            str.append(grds.get(i).getValue() + "\n");
+            gradeSum +=grds.get(i).getValue();
             numGrades++;
         }
         

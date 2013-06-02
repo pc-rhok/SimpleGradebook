@@ -8,12 +8,17 @@ public class Student {
     private String IDString;
     private String parentEmail;
     private ArrayList<Attend> attendance;
+    private ArrayList<Grade> grades;
     
 
-    public Student(String name, String IDString){
+    
+
+    public Student(String name, String IDString, String parentEmail){
         this.name = name;
         this.IDString = IDString;
+        this.parentEmail = parentEmail;
         attendance = new ArrayList<Attend>();
+        grades = new ArrayList<Grade>();
     }
     
     public int getNumAbsences(){
@@ -64,5 +69,21 @@ public class Student {
         }
         return false;
         
+    }
+    
+    public ArrayList<Attend> getAttendance() {
+        return attendance;
+    }
+
+    public void setAttendance(ArrayList<Attend> attendance) {
+        this.attendance = attendance;
+    }
+
+    public ArrayList<Grade> getGrades() {
+        return grades;
+    }
+
+    public void setGrades(ArrayList<Grade> grades) {
+        this.grades = grades;
     }
 }
