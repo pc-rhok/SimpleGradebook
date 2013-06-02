@@ -1,9 +1,11 @@
 import controlP5.*;
+
 ControlP5 cp5;
 
 Group[] views;
 
 void setup() {
+  Student s = new Student("Bob", "blah", "blah");
   size(640, 480);
   cp5 = new ControlP5(this);
   views = new Group[] {
@@ -16,14 +18,6 @@ void setup() {
 void draw() {
   background(color(200));
 }
-
-/*
-void keyPressed() {
- int index = int(str(key));
- if (0 <= index && index < views.length)
- switchView(int(str(key)));
- }
- */
 
 void switchView(int viewNum) {
   for (int i = 0; i < views.length; i++) {

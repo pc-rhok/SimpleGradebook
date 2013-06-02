@@ -38,7 +38,7 @@ Group assignment() {
 
   // Assignment type
   DropdownList assType = cp5.addDropdownList("assignmentType")
-    .setPosition(20, 270)
+    .setPosition(20, 280)
       .setSize(200, 200)
         .setGroup(g)
           .setLabel("Assignment Type");

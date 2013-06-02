@@ -38,4 +38,3 @@ Group studentList() {
   return g;
 }
 
-

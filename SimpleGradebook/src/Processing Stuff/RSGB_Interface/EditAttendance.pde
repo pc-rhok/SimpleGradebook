@@ -1,6 +1,8 @@
 import java.util.Date;
 
-Date[] classDates = {new Date(2013, 11, 2), new Date(2013, 11, 3), new Date(2013, 11, 4), new Date(2013, 11, 5), new Date(2013, 11, 6)};
+Date[] classDates = {
+  new Date(2013, 11, 2), new Date(2013, 11, 3), new Date(2013, 11, 4), new Date(2013, 11, 5), new Date(2013, 11, 6)
+};
 
 Group editAttendance() {
   // Set up the back button
@@ -11,7 +13,7 @@ Group editAttendance() {
         .setPosition(0, 0)
           .setLabel("Back")
             .setGroup(g);
-  
+
   // The list of students
   ListBox classes = cp5.addListBox("attendingList")
     .setPosition(0, 100)
@@ -35,3 +37,4 @@ Group editAttendance() {
   // DONE
   return g;
 }
+

@@ -1,4 +1,6 @@
-String[] classNames = {"Math","Science","Literature","History"};
+String[] classNames = {
+  "Math", "Science", "Literature", "History"
+};
 
 Group teacherMenu() {
   // Set up the list of classes
@@ -31,3 +33,4 @@ Group teacherMenu() {
   addClass.setGroup(g);
   return g;
 }
+

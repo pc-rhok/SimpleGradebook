@@ -35,7 +35,7 @@ Group classMenu() {
         .setPosition(width/2-75, 4*height/5)
           .setLabel("Setup")
             .setGroup(g);
-  
+
   // DONE
   return g;
 }
