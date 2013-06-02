@@ -29,26 +29,49 @@ public class Course {
            this.grades = new ArrayList<Grade>();
     }
     
+    /**
+     * Adds a student to the students array.
+     * Sets the UID of the student by incrementing the static global variable
+     * @param student
+     */
     public void addStudent(Student student){
         this.students.add(student);
         student.setUID(++studentID);
     }
     
+    /**
+     * Removes student from the students array.
+     * TODO: REMOVE ASSOCIATED GRADES
+     * @param student
+     */
     public void removeStudent(Student student){
         
         this.students.remove(student);
     }
     
+    /**
+     * Adds an assignment to the assignments array
+     * @param assign
+     */
     public void addAssignment(Assignment assign){
         assignments.add(assign);
     }
     
+    /**
+     * constructs a Grade object and adds it to both this Assignment object as well as the student object array
+     * @param student
+     * @param project
+     * @param value
+     */
     public void inputGrade(Student student, Assignment project, float value){
         Grade toInput = new Grade(student, project, value, weights[project.getType()]);
         student.getGrades().add(toInput);
         grades.add(toInput);
     }
     
+    /*
+     * Returns the average grade of the Course
+     */
     public float getAverageGrade(){
         int output = 0;
         for(int i = 0; i < grades.size(); i++){
@@ -58,6 +81,9 @@ public class Course {
         return output;
     }
     
+    /*
+     * Returns an ArrayList of assignments that a student has completed
+     */
     public ArrayList<Assignment> getStudentAssignments(Student student){
         ArrayList<Assignment> output = new ArrayList<Assignment>();
         for(int i = 0; i < student.getGrades().size(); i++){
@@ -66,7 +92,12 @@ public class Course {
         return output;
     }
     
-    
+    /**
+     * prints a report card for a student listing their name, course, absences, assignments, grades, individual average
+     * and class average.
+     * @param student
+     * @return
+     */
     public String printReportCard(Student student){
         StringBuilder str = new StringBuilder();
         

@@ -9,9 +9,6 @@ public class Student {
     private String parentEmail;
     private ArrayList<Attend> attendance;
     private ArrayList<Grade> grades;
-    
-
-    
 
     public Student(String name, String IDString, String parentEmail){
         this.name = name;
@@ -21,6 +18,10 @@ public class Student {
         grades = new ArrayList<Grade>();
     }
     
+    /**
+     * Takes a sum of absences based on the Attendance array
+     * @return
+     */
     public int getNumAbsences(){
         int output = 0;
         for(int i = 0; i < attendance.size(); i++){
@@ -63,8 +64,12 @@ public class Student {
         this.parentEmail = parentEmail;
     }
     
+    /*
+     * Compares the uid, name and IDString of each student and returns true if they are all the same
+     */
+    
     public boolean equals(Student student){
-        if(this.uid == student.uid){
+        if(this.uid == student.uid && this.name.compareTo(student.getName()) == 0 && this.IDString.compareTo(student.getIDString()) == 0){
             return true;
         }
         return false;

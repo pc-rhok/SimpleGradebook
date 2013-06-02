@@ -14,7 +14,8 @@ public class GradeBook {
     }
     
     /**
-     * It does a thing!
+     * Adds a course to the gradebook (there really should be only one)
+     * Sets a course ID based on the number of the instance
      * @param course This parameter is awesome!
      */
     public void addCourse(Course course){
@@ -22,6 +23,9 @@ public class GradeBook {
         this.courses.add(course);
     }
     
+    /**
+     * Don't use this. It really does nothing useful. I should really take it out.
+     */
     public String toString(){
     	 String output = ""; 
     	
