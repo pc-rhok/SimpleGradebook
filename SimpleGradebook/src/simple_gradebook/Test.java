@@ -29,11 +29,15 @@ public class Test {
         
         fun.addAssignment(project);
         
+        fun.inputGrade(sally, project, 99);
+        
         JSONHelper jsonHelper = new JSONHelper();
         jsonHelper.storeToJSON(gb);
         
         GradeBook gradeBookImported = jsonHelper.getFromJSON();
         System.out.println(gradeBookImported.toString());
+        
+        System.out.println(gradeBookImported.courses.get(1).printReportCard(sally));
         
         
     

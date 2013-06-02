@@ -43,7 +43,7 @@ public class Course {
         
         for(int i = 0; i < assignments.size(); i++){
             for(int j = 0; j <assignments.get(i).grades.size(); j++){
-                if(assignments.get(i).grades.get(j).student.equals(student)){
+                if(assignments.get(i).grades.get(j).getStudent().equals(student)){
                     assignments.get(i).grades.remove(j);
                 }
             }
@@ -57,7 +57,57 @@ public class Course {
     }
     
     public void inputGrade(Student student, Assignment project, float value){
-        grades.add(new Grade(student,value, weights[project.getType()]));
+        Grade toInput = new Grade(student, project, value, weights[project.getType()]);
+        project.grades.add(toInput);
+        grades.add(toInput);
+    }
+    
+    public float getAverageGrade(){
+        int output = 0;
+        for(int i = 0; i < grades.size(); i++){
+            output += grades.get(i).getValue();
+        }
+        
+        return output;
+    }
+    
+    public ArrayList<Assignment> getStudentAssignments(Student student){
+        ArrayList<Assignment> output = new ArrayList<Assignment>();
+        for(int i = 0; i < assignments.size(); i++){
+            for(int j = 0; j < assignments.get(i).grades.size(); j++){
+                if(assignments.get(i).grades.get(j).getStudent().equals(student)){
+                    output.add(assignments.get(i));
+                }
+            }  
+        }        
+        return output;
+    }
+    
+    
+    public String printReportCard(Student student){
+        StringBuilder str = new StringBuilder();
+        
+        str.append(student.getName() + "\n");
+        str.append(this.name + "\n");
+        str.append(student.getNumAbsences() + "\n");
+        
+        ArrayList<Assignment> assigns = getStudentAssignments(student);
+        
+        float gradeSum = 0;
+        int numGrades = 0;
+        
+        for(int i = 0; i < assigns.size(); i++){
+            str.append(assigns.get(i).getName() + "-----------------");
+            str.append(assigns.get(i).getStudentGrade(student).getValue() + "\n");
+            gradeSum += assigns.get(i).getStudentGrade(student).getValue();
+            numGrades++;
+        }
+        
+        str.append(gradeSum/numGrades + "\n");
+        str.append(getAverageGrade() + "\n");
+        
+        
+        return str.toString();
     }
     
     public boolean equals(Course course){
