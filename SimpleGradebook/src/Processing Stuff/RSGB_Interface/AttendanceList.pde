@@ -29,7 +29,6 @@ Group attendanceList() {
   classes.setGroup(g);
 
   classes.captionLabel().set("Students");
-  classes.captionLabel().setFont(font);
   classes.captionLabel().setColor(color(0));
   classes.captionLabel().style().marginTop = 3;
   classes.valueLabel().style().marginTop = 3;

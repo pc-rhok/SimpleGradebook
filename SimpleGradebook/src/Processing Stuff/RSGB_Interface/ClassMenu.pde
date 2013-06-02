@@ -15,7 +15,6 @@ Group classMenu() {
         .setPosition(width/2-75, height/5)
           .setLabel("Assignments")
             .setGroup(g);
-  assignments.captionLabel().setFont(font);
   // Set up the Attendance button
   Button attendance = cp5.addButton("attendance")
     .setValue(0)
@@ -23,7 +22,6 @@ Group classMenu() {
         .setPosition(width/2-75, 2*height/5)
           .setLabel("Attendance")
             .setGroup(g);
-  attendance.captionLabel().setFont(font);
   // Set up the Student Reports button
   Button reports = cp5.addButton("studentReports")
     .setValue(0)
@@ -31,7 +29,6 @@ Group classMenu() {
         .setPosition(width/2-75, 3*height/5)
           .setLabel("Student Reports")
             .setGroup(g);
-  reports.captionLabel().setFont(font);
   // Set up the Setup button
   Button dood = cp5.addButton("config")
     .setValue(0)
@@ -39,7 +36,6 @@ Group classMenu() {
         .setPosition(width/2-75, 4*height/5)
           .setLabel("Setup")
             .setGroup(g);
-  dood.captionLabel().setFont(font);
   
   // DONE
   return g;

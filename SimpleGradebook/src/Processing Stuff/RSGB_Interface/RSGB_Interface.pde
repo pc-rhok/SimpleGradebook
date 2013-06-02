@@ -9,7 +9,8 @@ void setup() {
   font = createFont("arial", 15);
   cp5 = new ControlP5(this);
   views = new Group[] {
-    teacherMenu(), classMenu(), assignmentList(), attendanceList(), attendanceMenu()
+    teacherMenu(), classMenu(), assignmentList(), attendanceList(), attendanceMenu(), assignment(), 
+    editAttendance(), studentList()
     };
     switchView(0);
 }
@@ -55,10 +56,14 @@ void controlEvent(ControlEvent theEvent) {
   } else if (name.equals("backToClassList")) {
     switchView(0);
   } else if (name.equals("attendance")) {
-    switchView(3);
-  } else if (name.equals("backToClassFromAssignment")) {
+    switchView(4);
+  } else if (name.equals("backToClassFromAssignmentList")) {
     switchView(1);
   } else if (name.equals("backToClassFromAttendance")) {
+    switchView(1);
+  } else if (name.equals("backToAssignmentListFromAssignment")) {
+    switchView(2);
+  } else if (name.equals("backToClassView")) {
     switchView(1);
   }
 }

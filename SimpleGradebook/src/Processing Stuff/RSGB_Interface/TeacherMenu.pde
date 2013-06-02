@@ -15,7 +15,6 @@ Group teacherMenu() {
   classes.setGroup(g);
 
   classes.captionLabel().set("My Classes");
-  classes.captionLabel().setFont(font);
   classes.captionLabel().setColor(color(0));
   classes.captionLabel().style().marginTop = 3;
   classes.valueLabel().style().marginTop = 3;
@@ -29,7 +28,6 @@ Group teacherMenu() {
   addClass.setSize(200, 20);
   addClass.setPosition(width/2-100, height-50);
   addClass.setLabel("Add a New Class");
-  addClass.captionLabel().setFont(font);
   addClass.setGroup(g);
   return g;
 }

@@ -7,7 +7,6 @@ Group attendanceMenu() {
         .setPosition(0, 0)
           .setLabel("Back")
             .setGroup(g);
-  back.captionLabel().setFont(font);
   // Set up the Today's Attendance button
   Button assignments = cp5.addButton("today")
     .setValue(0)
@@ -15,7 +14,6 @@ Group attendanceMenu() {
         .setPosition(width/2-75, height/5)
           .setLabel("Today's Attendance")
             .setGroup(g);
-  assignments.captionLabel().setFont(font);
   // Set up the Attendance button
   Button attendance = cp5.addButton("history")
     .setValue(0)
@@ -23,7 +21,6 @@ Group attendanceMenu() {
         .setPosition(width/2-75, 2*height/5)
           .setLabel("Attendance History")
             .setGroup(g);
-  attendance.captionLabel().setFont(font);
   // DONE
   return g;
 }
