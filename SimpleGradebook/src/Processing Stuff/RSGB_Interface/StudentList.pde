@@ -8,7 +8,7 @@ Group studentList() {
         .setPosition(0, 0)
           .setLabel("Back")
             .setGroup(g);
-  // The list of assignments
+  // The list of students
   ListBox classes = cp5.addListBox("studentReportList")
     .setPosition(0, 100)
       .setSize(width, height-110)
@@ -21,7 +21,6 @@ Group studentList() {
   classes.setGroup(g);
 
   classes.captionLabel().set("Students");
-  classes.captionLabel().setFont(font);
   classes.captionLabel().setColor(color(0));
   classes.captionLabel().style().marginTop = 3;
   classes.valueLabel().style().marginTop = 3;
@@ -36,7 +35,6 @@ Group studentList() {
         .setPosition(width/2-100, height-30)
           .setLabel("Add a New Student")
             .setGroup(g);
-  addAssignment.captionLabel().setFont(font);
   return g;
 }
 

@@ -7,7 +7,6 @@ Group classMenu() {
         .setPosition(0, 0)
           .setLabel("Back")
             .setGroup(g);
-  back.captionLabel().setFont(font);
   // Set up the Assignments button
   Button assignments = cp5.addButton("assignments")
     .setValue(0)

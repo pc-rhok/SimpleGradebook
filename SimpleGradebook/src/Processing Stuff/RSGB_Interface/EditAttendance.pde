@@ -11,7 +11,6 @@ Group editAttendance() {
         .setPosition(0, 0)
           .setLabel("Back")
             .setGroup(g);
-  back.captionLabel().setFont(font);
   
   // The list of students
   ListBox classes = cp5.addListBox("attendingList")
@@ -26,7 +25,6 @@ Group editAttendance() {
   classes.setGroup(g);
 
   classes.captionLabel().set("Edit Attendance");
-  classes.captionLabel().setFont(font);
   classes.captionLabel().setColor(color(0));
   classes.captionLabel().style().marginTop = 3;
   classes.valueLabel().style().marginTop = 3;
