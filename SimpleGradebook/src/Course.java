@@ -89,6 +89,11 @@ public class Course {
     }       
     return output;
   }
+  
+  public void addAttendance(Student student, boolean status){
+      Attend attend = new Attend(this, student, status);
+      this.attendance.add(attend);
+  }
 
   /**
    * prints a report card for a student listing their name, course, absences, assignments, grades, individual average
