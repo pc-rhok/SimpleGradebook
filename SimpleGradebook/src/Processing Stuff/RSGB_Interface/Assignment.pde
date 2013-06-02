@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 Group assignment() {
   // Set up the list of students
   Group g = cp5.addGroup("assignment");
@@ -28,6 +30,7 @@ Group assignment() {
               .setFocus(false)
                 .setGroup(g);
   assPoints.getCaptionLabel().setColor(color(0));
+
   // Assignment type
   DropdownList assType = cp5.addDropdownList("assignmentType")
     .setPosition(20, 200)
@@ -66,6 +69,15 @@ Group assignment() {
   }
   students.setGroup(g);
 
+  //Grade Input Field
+  Textfield inputPoints = cp5.addTextfield("gradeInput")
+    .setPosition(.9*width/2, height-70).setSize(200, 40)
+      .setFocus(true)
+        .setColor(color(255, 0, 0))
+          .setLabel("Points")
+            .setFocus(false)
+              .setGroup(g);
+  inputPoints.getCaptionLabel().setColor(color(0));
   return g;
 }
 

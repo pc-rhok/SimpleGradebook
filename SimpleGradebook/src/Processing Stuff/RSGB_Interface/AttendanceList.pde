@@ -1,7 +1,8 @@
 import java.util.HashMap;
 
 String[] studentNames = {
-  "alice", "bob", "carol", "dave", "emma", "fred", "gina"
+  "alice", "bob", "carol", "dave", "emma", "fred", "gina", "harry", "irene", 
+  "joe", "kathryn", "lenny"
 };
 HashMap<String, Boolean> attendance = new HashMap<String, Boolean>();
 
@@ -38,3 +39,4 @@ Group attendanceList() {
   }
   return g;
 }
+
