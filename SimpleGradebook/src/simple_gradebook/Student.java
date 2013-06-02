@@ -9,6 +9,14 @@ public class Student {
     private String parentEmail;
     private ArrayList<Attend> attendance;
     private ArrayList<Grade> grades;
+    
+    public Student(String name){
+        this.name = name;
+        this.IDString = "placeholder";
+        this.parentEmail = "@.com";
+        attendance = new ArrayList<Attend>();
+        grades = new ArrayList<Grade>();
+    }
 
     public Student(String name, String IDString, String parentEmail){
         this.name = name;
