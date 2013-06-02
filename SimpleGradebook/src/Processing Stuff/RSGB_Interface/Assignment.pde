@@ -27,7 +27,7 @@ Group assignment() {
   assName.getCaptionLabel().setColor(color(0));
   // Assignment Total Points
   Textfield assPoints = cp5.addTextfield("assignmentPoints")
-    .setPosition(20, 220)
+    .setPosition(20, 170)
       .setSize(200, 40)
         .setFocus(true)
           .setColor(color(255))
@@ -38,7 +38,7 @@ Group assignment() {
 
   // Assignment type
   DropdownList assType = cp5.addDropdownList("assignmentType")
-    .setPosition(20, 200)
+    .setPosition(20, 270)
       .setSize(200, 200)
         .setGroup(g)
           .setLabel("Assignment Type");

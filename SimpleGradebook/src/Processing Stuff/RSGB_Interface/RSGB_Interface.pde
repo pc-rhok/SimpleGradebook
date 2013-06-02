@@ -52,8 +52,7 @@ void controlEvent(ControlEvent theEvent) {
       gradeBox.setText(str(grades.get(studentName)));
     selectedGrade = index;
     gradeBox.setFocus(true);
-  }
-  if (theEvent.isAssignableFrom(Textfield.class) && name.equals("gradeInput")) {
+  } else if (theEvent.isAssignableFrom(Textfield.class) && name.equals("gradeInput")) {
     ListBox list = (ListBox)cp5.get("gradeEntryList");
     ListBoxItem item = list.getItem(selectedGrade);
     String studentName = studentNames[selectedGrade];
@@ -67,9 +66,8 @@ void controlEvent(ControlEvent theEvent) {
     int grade = int(rawGrade);
     grades.put(studentName, grade);
     item.setText(studentName+"     ("+grades.get(studentName)+")");
-  }
-  //The attendance list
-  if (name.equals("attendanceList")) {
+  } else if (name.equals("attendanceList")) {
+    //The attendance list 
     int index = (int)theEvent.group().value();
     ListBox list = (ListBox)cp5.get("attendanceList");
     ListBoxItem item = list.getItem(index);
@@ -80,6 +78,8 @@ void controlEvent(ControlEvent theEvent) {
     } else {
       item.setColorBackground(color(#ff0000));
     }
+  } else if (name.equals("classList")) {
+    switchView(1);
     //Navigation controls:
   } else if (name.equals("backToClass")) {
     switchView(1);
@@ -107,6 +107,20 @@ void controlEvent(ControlEvent theEvent) {
     switchView(6);
   } else if (name.equals("studentReports")) {
     switchView(7);
+  } else if (name.equals("addClass")) {
+    switchView(8);
+  } else if (name.equals("saveClass")) {
+    //TODO: Save the class.
+    switchView(0);
+  } else if (name.equals("cancelClass")) {
+    //TODO: Ditch the class.
+    switchView(0);
+  } else if (name.equals("config")) {
+    //TODO: Pull up the options for the specific class
+    switchView(8);
+  } else if (name.equals("listOfAssignments")) {
+    //TODO: Pull up this specific assignment
+    switchView(5);
   }
 }
 
